@@ -59,8 +59,17 @@
     }
 
     /* ---- Current year in footer ---- */
+    var now = new Date();
     var year = document.getElementById("year");
-    if (year) year.textContent = String(new Date().getFullYear());
+    if (year) year.textContent = String(now.getFullYear());
+
+    /* ---- Dynamic years of experience (since Jan 2021) ---- */
+    var START_YEAR = 2021;
+    var yrs = now.getFullYear() - START_YEAR;
+    var expHero = document.getElementById("yearsExp");
+    var expAbout = document.getElementById("yearsExpAbout");
+    if (expHero) expHero.textContent = yrs + "+";
+    if (expAbout) expAbout.textContent = yrs + "+";
 
     /* ---- Scroll reveal ---- */
     var revealEls = document.querySelectorAll(".reveal");
