@@ -1,0 +1,10 @@
+# Local notes / change log (kept out of the repo)
+NOTES.md
+CHANGES.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

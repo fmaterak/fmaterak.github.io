@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Filip Materak — Software Engineer specializing in modern C++, Linux systems, telecom and embedded software for 5G infrastructure." />
+  <meta name="author" content="Filip Materak" />
+  <meta property="og:title" content="Filip Materak — Software Engineer" />
+  <meta property="og:description" content="Software Engineer | Linux Systems | Telecom & Embedded. 5+ years building high-performance C++ for 5G infrastructure at Nokia." />
+  <meta property="og:type" content="website" />
+  <title>Filip Materak — Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__brand-mark">FM</span>
+        <span class="nav__brand-text">Filip Materak</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav__burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="hero__eyebrow reveal">Software Engineer</p>
+        <h1 class="hero__title reveal">Filip Materak</h1>
+        <p class="hero__tagline reveal">Linux Systems &nbsp;·&nbsp; Telecom &nbsp;·&nbsp; Embedded</p>
+        <p class="hero__lead reveal">
+          I build high-performance, Linux-based systems for 5G mobile infrastructure at Nokia —
+          with a focus on modern C++, low-level performance, and clean, well-tested code.
+        </p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--primary" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+        <ul class="hero__stats reveal">
+          <li><strong>5+</strong><span>Years experience</span></li>
+          <li><strong>C++20</strong><span>Modern C++</span></li>
+          <li><strong>85%</strong><span>Test coverage delivered</span></li>
+          <li><strong>20+</strong><span>Engineers mentored</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">01</span>
+          <h2 class="section__title">Professional Summary</h2>
+        </div>
+        <div class="about reveal">
+          <p class="about__lead">
+            Experienced Software Engineer with <strong>5+ years</strong> in high-performance, Linux-based
+            systems for 5G mobile infrastructure at Nokia. Specialized in modern C++ (up to C++20),
+            multithreaded environments, and large-scale telecom software.
+          </p>
+          <p>
+            Proven impact in legacy code modernization, memory and latency optimization, and test
+            coverage improvements. Looking for engineering roles focused on low-level systems,
+            embedded platforms, or telecom infrastructure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">02</span>
+          <h2 class="section__title">Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-item__marker" aria-hidden="true"></div>
+            <div class="tl-item__body">
+              <div class="tl-item__top">
+                <h3 class="tl-item__role">Software Engineer</h3>
+                <span class="tl-item__period">2021 – present</span>
+              </div>
+              <p class="tl-item__meta"><span class="tl-item__company">Nokia</span> · Wrocław, Poland</p>
+              <ul class="tl-item__points">
+                <li>Engineered low-level components in <strong>C++17/20</strong> for 5G RAN software deployed on millions of base stations worldwide.</li>
+                <li>Modernized a legacy <strong>10k+ LOC</strong> module using C++20 idioms (<code>std::variant</code>, Ranges), reducing memory footprint by <strong>30%</strong> and latency by <strong>15%</strong>.</li>
+                <li>Boosted test coverage in mission-critical modules from <strong>40% to 85%</strong> by integrating GTest into CI/CD (Jenkins + Gerrit).</li>
+                <li>Investigated and fixed race conditions and memory bugs using Valgrind, AddressSanitizer, and in-house logging tools; reduced bug backlog by <strong>40%</strong>.</li>
+                <li>Delivered <strong>10+</strong> internal C++ workshops within Nokia's Bakcyl Programowania; mentored <strong>20+</strong> junior engineers in best practices and clean code.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">03</span>
+          <h2 class="section__title">Selected Projects</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__top">
+              <h3 class="card__title">Linux Terminal Emulator</h3>
+              <span class="card__badge">C++ · 2k LOC</span>
+            </div>
+            <p class="card__sub">Personal Project</p>
+            <ul class="card__points">
+              <li>Lightweight terminal emulator in C++17 with full ANSI escape sequence support and real-time I/O handling.</li>
+              <li>Modular CMake-based architecture, 100% unit test coverage, zero memory leaks (verified via Valgrind).</li>
+              <li>Showcases POSIX APIs, parser implementation, and low-level performance.</li>
+            </ul>
+            <a class="card__link" href="https://github.com/fmaterak/Linux_terminal" target="_blank" rel="noopener">
+              github.com/fmaterak/Linux_terminal
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <h3 class="card__title">Virtual Filesystem</h3>
+              <span class="card__badge">C++</span>
+            </div>
+            <p class="card__sub">Personal Project</p>
+            <ul class="card__points">
+              <li>Modular virtual filesystem in modern C++ with pluggable in-memory and disk-based storage backends.</li>
+              <li>Core operations (create, delete, read, write) with hierarchical directory structure and permission system.</li>
+              <li>Extensible architecture: clear abstractions for storage devices and filesystem nodes.</li>
+              <li>OOP, interface-based design, dependency injection, unit testing with GoogleTest.</li>
+            </ul>
+            <a class="card__link" href="https://github.com/fmaterak/virtual-filesystem-cpp" target="_blank" rel="noopener">
+              github.com/fmaterak/virtual-filesystem-cpp
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">04</span>
+          <h2 class="section__title">Technical Stack</h2>
+        </div>
+
+        <div class="skills">
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Languages</h3>
+            <ul class="chips">
+              <li>C++ (11/14/17/20)</li><li>Python</li><li>SQL (SQLite)</li><li>Bash</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Frameworks &amp; Libraries</h3>
+            <ul class="chips">
+              <li>Qt</li><li>GTest</li><li>Google Benchmark</li><li>STL</li><li>Boost</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Tools</h3>
+            <ul class="chips">
+              <li>Git</li><li>CMake</li><li>Valgrind</li><li>Docker</li><li>Kubernetes</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Platforms</h3>
+            <ul class="chips">
+              <li>Linux</li><li>CI/CD (Jenkins, Gerrit)</li><li>Jira</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section__subhead reveal">
+          <h3>Licenses &amp; Certifications</h3>
+        </div>
+        <ul class="certs">
+          <li class="reveal"><span class="certs__name">AWS Cloud Solutions Architect</span><span class="certs__issuer">Amazon Web Services · 2025</span></li>
+          <li class="reveal"><span class="certs__name">Google Cybersecurity Professional</span><span class="certs__issuer">Google · 2025</span></li>
+          <li class="reveal"><span class="certs__name">Linux Tools for Developers</span><span class="certs__issuer">The Linux Foundation · 2024</span></li>
+        </ul>
+
+        <div class="extras">
+          <div class="extras__col reveal">
+            <h3 class="skills__label">Languages</h3>
+            <ul class="chips chips--soft">
+              <li>English — C1 (Fluent)</li><li>Polish — Native</li>
+            </ul>
+          </div>
+          <div class="extras__col reveal">
+            <h3 class="skills__label">Soft Skills</h3>
+            <ul class="chips chips--soft">
+              <li>Mentoring (20+ engineers)</li><li>Cross-team collaboration</li><li>CI/CD &amp; Code Review Advocate</li><li>Debugging Complex Systems</li>
+            </ul>
+          </div>
+          <div class="extras__col reveal">
+            <h3 class="skills__label">Career Interests</h3>
+            <ul class="chips chips--soft">
+              <li>Low-level programming</li><li>Embedded Systems</li><li>Cloud-Native C++</li><li>Linux Kernel / Tooling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">05</span>
+          <h2 class="section__title">Education</h2>
+        </div>
+        <div class="cards cards--edu">
+          <article class="card reveal">
+            <h3 class="card__title">Control Engineering and Robotics</h3>
+            <p class="card__sub">Engineer's degree · 2018 – 2022</p>
+            <p class="card__text">Wrocław University of Science and Technology · Wrocław, Poland</p>
+          </article>
+          <article class="card reveal">
+            <h3 class="card__title">Business Informatics</h3>
+            <p class="card__sub">Master's degree · 2022 – 2024</p>
+            <p class="card__text">Wrocław University of Economics · Wrocław, Poland</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">06</span>
+          <h2 class="section__title">Get in touch</h2>
+        </div>
+        <p class="contact__lead reveal">
+          Open to engineering roles in low-level systems, embedded platforms, and telecom infrastructure.
+          Feel free to reach out.
+        </p>
+        <div class="contact__grid">
+          <a class="contact__item reveal" href="mailto:fmaterak.dev@gmail.com">
+            <span class="contact__k">Email</span>
+            <span class="contact__v">fmaterak.dev@gmail.com</span>
+          </a>
+          <a class="contact__item reveal" href="tel:+48733779628">
+            <span class="contact__k">Phone</span>
+            <span class="contact__v">+48 733 779 628</span>
+          </a>
+          <a class="contact__item reveal" href="https://github.com/fmaterak" target="_blank" rel="noopener">
+            <span class="contact__k">GitHub</span>
+            <span class="contact__v">github.com/fmaterak</span>
+          </a>
+          <a class="contact__item reveal" href="https://www.linkedin.com/in/filip-materak" target="_blank" rel="noopener">
+            <span class="contact__k">LinkedIn</span>
+            <span class="contact__v">in/filip-materak</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> Filip Materak</span>
+      <span class="footer__loc">Wrocław, Poland</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
