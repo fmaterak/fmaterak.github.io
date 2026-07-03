@@ -131,20 +131,51 @@
           <h2 class="section__title">Selected Projects</h2>
         </div>
 
+        <p class="section__lead reveal">
+          Systems I've designed and built from scratch — distributed consensus in Rust,
+          high-throughput tooling in Go, and low-level C++. Polyglot by choice, always
+          focused on performance, clean architecture, and real test coverage.
+        </p>
+
         <div class="cards">
           <article class="card reveal">
             <div class="card__top">
-              <h3 class="card__title">Linux Terminal Emulator</h3>
-              <span class="card__badge">C++ · 2k LOC</span>
+              <h3 class="card__title">ferrium</h3>
+              <span class="card__badge">Rust</span>
             </div>
-            <p class="card__sub">Personal Project</p>
+            <p class="card__tagline">Distributed, strongly-consistent key-value store with the Raft consensus algorithm implemented from scratch.</p>
             <ul class="card__points">
-              <li>Lightweight terminal emulator in C++17 with full ANSI escape sequence support and real-time I/O handling.</li>
-              <li>Modular CMake-based architecture, 100% unit test coverage, zero memory leaks (verified via Valgrind).</li>
-              <li>Showcases POSIX APIs, parser implementation, and low-level performance.</li>
+              <li>Hand-rolled <strong>Raft consensus</strong> — leader election, log replication and safety guarantees, with no external consensus library.</li>
+              <li>Fully async on <code>tokio</code> with a <strong>Redis-compatible RESP2 protocol</strong>, so <code>redis-cli</code> and standard clients connect out of the box.</li>
+              <li>Automatic failover surviving minority node loss; pluggable LSM-tree storage, Prometheus metrics and TLS for client and inter-node traffic.</li>
+              <li><strong>Deterministic simulation testing</strong> — network partitions and crashes reproduced in CI, not just described.</li>
             </ul>
-            <a class="card__link" href="https://github.com/fmaterak/Linux_terminal" target="_blank" rel="noopener">
-              github.com/fmaterak/Linux_terminal
+            <ul class="card__tech">
+              <li>Rust</li><li>tokio</li><li>Raft</li><li>RESP2</li><li>LSM-tree</li><li>Prometheus</li>
+            </ul>
+            <a class="card__link" href="https://github.com/fmaterak/ferrium" target="_blank" rel="noopener">
+              github.com/fmaterak/ferrium
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <h3 class="card__title">logpipe</h3>
+              <span class="card__badge">Go</span>
+            </div>
+            <p class="card__tagline">High-performance, zero-dependency CLI for real-time log streaming, filtering and pattern alerting.</p>
+            <ul class="card__points">
+              <li>Concurrent, stage-based pipeline built on goroutine pools and buffered channels, with natural <strong>backpressure</strong> instead of dropped events.</li>
+              <li>Regex and structured (JSON field) filtering plus sliding-window pattern alerting using <strong>O(1) ring buffers</strong>.</li>
+              <li>Benchmarked at <strong>1.2M msg/s</strong> tail throughput with sub-millisecond p99 on a single core; ships as one static binary.</li>
+              <li>Interface-based plugin system for custom filters and outputs; text, JSON and CSV export.</li>
+            </ul>
+            <ul class="card__tech">
+              <li>Go</li><li>goroutines</li><li>CLI</li><li>Benchmarks</li><li>CI</li>
+            </ul>
+            <a class="card__link" href="https://github.com/fmaterak/logpipe" target="_blank" rel="noopener">
+              github.com/fmaterak/logpipe
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </a>
           </article>
@@ -152,17 +183,40 @@
           <article class="card reveal">
             <div class="card__top">
               <h3 class="card__title">Virtual Filesystem</h3>
-              <span class="card__badge">C++</span>
+              <span class="card__badge">C++23</span>
             </div>
-            <p class="card__sub">Personal Project</p>
+            <p class="card__tagline">Modular virtual filesystem in modern C++23 with an interactive shell and JSON persistence.</p>
             <ul class="card__points">
-              <li>Modular virtual filesystem in modern C++ with pluggable in-memory and disk-based storage backends.</li>
-              <li>Core operations (create, delete, read, write) with hierarchical directory structure and permission system.</li>
-              <li>Extensible architecture: clear abstractions for storage devices and filesystem nodes.</li>
-              <li>OOP, interface-based design, dependency injection, unit testing with GoogleTest.</li>
+              <li>In-memory tree of files and directories driven by a Unix-like REPL (<code>mkdir</code>, <code>cd</code>, <code>ls</code>, <code>touch</code>, <code>echo</code>, <code>cat</code>).</li>
+              <li>Clean module boundaries — VFS, Node/File/Directory, Path and Serializer — with save/load to JSON via nlohmann/json.</li>
+              <li>Interface-based design and dependency injection; core modules covered by unit tests.</li>
+              <li>CMake project layout (<code>src/</code>, <code>include/</code>, <code>tests/</code>) targeting GCC 13+ / Clang 17+.</li>
+            </ul>
+            <ul class="card__tech">
+              <li>C++23</li><li>CMake</li><li>REPL</li><li>nlohmann/json</li><li>GoogleTest</li>
             </ul>
             <a class="card__link" href="https://github.com/fmaterak/virtual-filesystem-cpp" target="_blank" rel="noopener">
               github.com/fmaterak/virtual-filesystem-cpp
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <h3 class="card__title">Linux Terminal Emulator</h3>
+              <span class="card__badge">C++</span>
+            </div>
+            <p class="card__tagline">Lightweight terminal emulator in C++17 with full ANSI escape-sequence support.</p>
+            <ul class="card__points">
+              <li>Real-time I/O handling and ANSI escape parsing built directly on <strong>POSIX APIs</strong>.</li>
+              <li>Modular CMake architecture with a focus on low-level performance and clean parser design.</li>
+              <li><strong>100% unit test coverage</strong> and zero memory leaks verified via Valgrind.</li>
+            </ul>
+            <ul class="card__tech">
+              <li>C++17</li><li>POSIX</li><li>CMake</li><li>Valgrind</li>
+            </ul>
+            <a class="card__link" href="https://github.com/fmaterak/Linux_terminal" target="_blank" rel="noopener">
+              github.com/fmaterak/Linux_terminal
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </a>
           </article>
@@ -182,7 +236,7 @@
           <div class="skills__group reveal">
             <h3 class="skills__label">Languages</h3>
             <ul class="chips">
-              <li>C++ (11/14/17/20)</li><li>Python</li><li>SQL (SQLite)</li><li>Bash</li>
+              <li>C++ (11/14/17/20/23)</li><li>Rust</li><li>Go</li><li>Python</li><li>SQL (SQLite)</li><li>Bash</li>
             </ul>
           </div>
           <div class="skills__group reveal">
@@ -244,16 +298,43 @@
           <span class="section__index">05</span>
           <h2 class="section__title">Education</h2>
         </div>
+
+        <p class="section__lead reveal">
+          Two complementary degrees: an engineering foundation in low-level, real-time systems,
+          extended with a master's perspective on software architecture and data — the same blend
+          of depth and breadth that shapes how I build software today.
+        </p>
+
         <div class="cards cards--edu">
           <article class="card reveal">
-            <h3 class="card__title">Control Engineering and Robotics</h3>
-            <p class="card__sub">Engineer's degree · 2018 – 2022</p>
-            <p class="card__text">Wrocław University of Science and Technology · Wrocław, Poland</p>
+            <div class="card__top">
+              <h3 class="card__title">Control Engineering and Robotics</h3>
+              <span class="card__badge">Engineer's</span>
+            </div>
+            <p class="card__sub">2018 – 2022 · Wrocław University of Science and Technology</p>
+            <p class="card__text">
+              A rigorous grounding in low-level and real-time systems — control theory, embedded
+              programming, signal processing and C/C++ — the technical bedrock for a career in
+              telecom and embedded software.
+            </p>
+            <ul class="card__tech">
+              <li>Real-time systems</li><li>Embedded C/C++</li><li>Control theory</li><li>Signal processing</li><li>Robotics</li>
+            </ul>
           </article>
           <article class="card reveal">
-            <h3 class="card__title">Business Informatics</h3>
-            <p class="card__sub">Master's degree · 2022 – 2024</p>
-            <p class="card__text">Wrocław University of Economics · Wrocław, Poland</p>
+            <div class="card__top">
+              <h3 class="card__title">Business Informatics</h3>
+              <span class="card__badge">Master's</span>
+            </div>
+            <p class="card__sub">2022 – 2024 · Wrocław University of Economics</p>
+            <p class="card__text">
+              Bridged deep engineering with software architecture and data — databases, system
+              design and large-scale application development — connecting technical work to real
+              business impact.
+            </p>
+            <ul class="card__tech">
+              <li>Software architecture</li><li>Databases</li><li>System design</li><li>Data analysis</li>
+            </ul>
           </article>
         </div>
       </div>
